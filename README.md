@@ -93,33 +93,33 @@ still be compilable with cmake and make./
 
 
 # Reflections
-All of my values where chossen manually by trial and error.
-## P-Value effect and tuningprocess
-steers in proportion to the present CrossTrack Error (CTE). I coose a value of 0.75.
+All of my values were chosen manually by trial and error.
+## P-Value effect and tuning process
+steers in proportion to the present CrossTrack Error (CTE). I choose a value 
+of 0.75.
 A higher value leads to a higher amplitude in the oscillations. 
 If the value is lowered the car is unable to manage the curves.
 
-## I-Value effect and tuningprocess
+## I-Value effect and tuning process
 The I-value steers according to the integral of CTE over the past time. 
 It is used to reduce systematic bias like a misalignment of the wheels. 
-Initially I thought I don't need it here, because it is a simulator where the 
-wheels etc. are aligned perfectly. However with I=0 the car drove to far on 
-the right and finally got of the road. A small value like 0.1 helps but a greater 
-value like 1 showed better results.
-value 
+Initially, I thought I don't need it here because it is a simulators
+wheels etc. are aligned perfectly. However, with I=0 the car drove too far 
+on the right and finally got off the road. A small value like 0.1 helps but 
+a greater value like 1 showed better results.
 
-## D-Value effect and tuningprocess
+## D-Value effect and tuning process
 The derivative value reduces overshooting (the amplitude). 
 If the car has turned enough to reduce the CTE it countersteers.
 I chose a value of 0.1. A smaller value leads to oscillations with a greater 
-amplitude. If the valure is to low, the amplitude is greater than the widh of 
-the road and the car falls of. A higher value slowes the car down. 
+amplitude. If the value is too low, the amplitude is greater than the width 
+of the road and the car falls off. A higher value slows the car down. 
 After trying a lot of values, 0.1 seemed to be a good tradeoff.
 
 ## Throttle
-Throttle is controlled according to the error. 
-Initially its set to a value of 9. 
-If the CTE is greater than 0.5 throttle is reduced to 3.5.
-If P_error-CTE is grater than 0.1 throttle is reduced to 1.
-If P_error-CTE is even grater than 0.2 throttle is -0.3, 
+The throttle is controlled according to the error. 
+Initially, it's set to a value of 9. 
+If the CTE is greater than 0.5, the throttle is reduced to 3.5.
+If P_error-CTE is greater than 0.1, the throttle is reduced to 1.
+If P_error-CTE is even greater than 0.2 throttle is -0.3, 
 which means the car is actually breaking.
