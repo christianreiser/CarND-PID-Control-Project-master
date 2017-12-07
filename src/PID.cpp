@@ -1,13 +1,3 @@
-/*
- * PID.cpp contains code from Udacity lessons 
- * and was also inspired by stackoverflow and Nikolay Falaleev
- * http://udacity.com/drive
- * https://stackoverflow.com/questions/25024012/running-sum-of-the-last-n-integers-in-an-array
- * https://github.com/NikolasEnt/PID-controller
- */
-
-
-
 #include <stdlib.h>
 #include "PID.h"
 
